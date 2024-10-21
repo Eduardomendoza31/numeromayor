@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <h1>Introducción a JavaScript</h1>
+    <input type="text" id="saludo">
+
+    <script>
+        // Variables para almacenar los números ingresados (como texto)
+        var numeros = [];  // Array para guardar los 5 números
+
+        // Pedimos al usuario 5 números usando el método prompt()
+        for (var i = 0; i < 5; i++) {
+            var num = prompt("Ingrese el número " + (i + 1) + ":"); // Guardamos el valor ingresado como texto
+            numeros[i] = num;  // Guardamos el valor en el array
+        }
+
+        // Inicializamos las variables de mayor y menor con las cadenas ingresadas
+        var mayor = numeros[0];
+        var menor = numeros[0];
+
+        // Recorremos el array para encontrar el mayor y el menor (en orden lexicográfico)
+        for (var i = 1; i < numeros.length; i++) {
+            if (numeros[i] > mayor) {
+                mayor = numeros[i];
+            }
+            if (numeros[i] < menor) {
+                menor = numeros[i];
+            }
+        }
+
+        // Mostramos los números ingresados uno por uno
+        document.write("<br><br>Los números ingresados son: ");
+        document.write("<br>")
+        for (var i = 0; i < numeros.length; i++) {
+            document.write(numeros[i] + "<br>");
+        }
+
+        // Mostramos los resultados del mayor y menor
+        document.write("<br>El número mayor es: " + mayor);
+        document.write("<br>El número menor es: " + menor);
+
+    </script>
+</body>
+</html>
